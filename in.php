@@ -2,8 +2,8 @@
 <?php
 include_once("config.php");
 if (!(isset($_SESSION['login']))){
-	header("Location: login.php");
-	exit;
+  header("Location: login.php");
+  exit;
 }
 if (!(isset($_SESSION['shelf']))&&!(isset($_SESSION['closet']))){
     $_SESSION['closet']=0;
@@ -26,14 +26,14 @@ mysqli_set_charset($link, "utf8");
 $sql = "SELECT * FROM genres ORDER BY name ASC";
 $result = mysqli_query($link, $sql);
   if (mysqli_num_rows($result) > 0) {
-  	 echo "<div><a>Select genre: </a><select id='g' name='genres'>";
+     echo "<div><a>Select genre: </a><select id='g' name='genres'>";
      while($row = mysqli_fetch_assoc($result)) {
-     	echo "<option value='".$row['id']."'>".$row['name']."</option>";
+      echo "<option value='".$row['id']."'>".$row['name']."</option>";
      }     
      echo "</select></div>";
  }
  //else{
- 	//echo "NULL";
+  //echo "NULL";
  //}
 echo "<div><a>Input closet: </a><input id='closet' type='text' value='".$_SESSION['closet']."'></div>";
 echo "<div><a>Input shelf:  </a><input id='shelf' type='text' value='".$_SESSION['shelf']."'></div>";

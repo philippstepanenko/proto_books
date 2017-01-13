@@ -3,8 +3,8 @@
 <?php
 include_once("config.php");
 if (!(isset($_SESSION['login']))){
-	header("Location: login.php");
-	exit;
+  header("Location: login.php");
+  exit;
 }
 ?>
 <a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
@@ -37,13 +37,15 @@ for($i=0;$i<count($mas)-1;$i++){
 }
 // сортировка массивов
 echo "<table><tr><td>Имя пользователя</td><td>Количество добавленных книг</td></tr>";
-array_multisort($count, SORT_DESC, $login);
-for($i=0;$i<count($mas)-1;$i++){
-echo "<tr><td>".$login[$i]."</td><td>".$count[$i]."</td></tr>";
+if((!empty($login))&&(!empty($count))){
+  array_multisort($count, SORT_DESC, $login);
+  for($i=0;$i<count($mas)-1;$i++){
+    echo "<tr><td>".$login[$i]."</td><td>".$count[$i]."</td></tr>";
+  }
 }
 echo "</table>";
 }
  else{
- 	echo "NULL";
+  echo "NULL";
  }
 ?>
