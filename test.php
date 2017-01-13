@@ -37,5 +37,4 @@ $result = mysqli_query($link, $sql);
  else{
  	echo "NULL";
  }
-//echo "<br><a href='http://yandex.ru'>Внести изменения</a>";
 ?>
