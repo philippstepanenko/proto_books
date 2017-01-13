@@ -17,7 +17,7 @@ if (!(isset($_SESSION['shelf']))&&!(isset($_SESSION['closet']))){
 <a href="stat.php">Статистика</a><br>
 <a href="out.php">Выйти</a><br><br>
 
-<div><a>Input string: </a><input id="a" type="text"></div>
+<div><a>Input string: </a><input id="a" type="text"><input type="button" onclick="rec()" value="Распознать"></div>
 <div><a>Input substr: </a><input id="b" type="text" value="дальше"></div>
 <div><a>Count books:  </a><input id="n" type="text" value="1"></div>
 
@@ -49,5 +49,29 @@ var g = document.getElementById('g').value;
 var closet = document.getElementById('closet').value;
 var shelf = document.getElementById('shelf').value;
 window.location="pars.php?a="+a+"&b="+b+"&g="+g+"&n="+n+"&closet="+closet+"&shelf="+shelf;
+}
+function rec(){
+// Создаем распознаватель
+var recognizer = new webkitSpeechRecognition();
+// Ставим опцию, чтобы распознавание началось ещё до того, как пользователь закончит говорить
+recognizer.interimResults = true;
+// Какой язык будем распознавать?
+recognizer.lang = 'ru-Ru';
+// Используем колбек для обработки результатов
+recognizer.onresult = function (event) {
+  var result = event.results[event.resultIndex];
+  if (result.isFinal) {
+    //if (result[0].transcript!="конец"){
+      //alert('Вы сказали: ' + result[0].transcript);
+      var out =  document.getElementById('a');
+      out.value=result[0].transcript;
+    //  rec();
+    //}
+  } else {
+    console.log('Промежуточный результат: ', result[0].transcript);
+  }
+};
+// Начинаем слушать микрофон и распознавать голос
+recognizer.start(); 
 }
 </script>

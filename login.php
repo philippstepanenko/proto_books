@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login
+	</title>
+</head>
+<body>
 <?php
 include_once("config.php");
 if (isset($_SESSION['login'])&&isset($_SESSION['pass'])){
@@ -29,3 +37,8 @@ if(isset($_POST["login"])&&isset($_POST["pass"])){
 		<input type="password" name="pass" size="50" maxlength="20" value=""><br>
     <input type="submit" name="btnAddArticle" value="Войти">
 </form>
+<script>
+
+</script>
+</body>
+</html>

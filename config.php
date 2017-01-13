@@ -1,5 +1,10 @@
-<?
+<?php
 session_start();
+$dbhost = "localhost";
+$dbname = "books";
+$dbuser = "root";
+$dbpass = "root";
+connectToDB(); 
 
 function connectToDB() {
   global $link, $dbhost, $dbuser, $dbpass, $dbname;
@@ -9,9 +14,5 @@ if ($link->connect_error) {
 }   
 } 
 
-$dbhost = "localhost";
-$dbname = "books";
-$dbuser = "admin";
-$dbpass = "password";
-connectToDB(); 
+
 ?>
