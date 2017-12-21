@@ -2,10 +2,12 @@
 </style>
 <?php
 include_once("config.php");
+include_once("show.php");
 if (!(isset($_SESSION['login']))){
   header("Location: login.php");
   exit;
 }
+$menu->show();
 ?>
 <a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
 <a href="index.php">Просмотр БД</a><br>

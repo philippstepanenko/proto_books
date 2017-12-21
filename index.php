@@ -1,18 +1,14 @@
 <link rel="stylesheet" href="style.css">
-<?php include_once("config.php");
+<?php
+include_once("config.php");
+include_once("show.php");
 if (!(isset($_SESSION['login']))){
 	header("Location: login.php");
 	exit;
 }
 ?>
-<a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
-<a href="index.php">Просмотр БД</a><br>
-<a href="in.php">Добавить книгу</a><br>
-<a href="genres.php">Добавить жанр</a><br>
-<a href="stat.php">Статистика</a><br>
-<a href="out.php">Выйти</a><br><br>
-
 <?php
+$menu->show();
 mysqli_set_charset($link, "utf8");
 //$sql = "SELECT b.id,b.title, b.autor, b.year, b.count, b.closet, b.shelf, g.name FROM books b JOIN genres g on b.genre=g.id ORDER BY b.id ASC";
 $sql = "SELECT b.id,b.title, b.autor, b.year, b.count, b.closet, b.shelf, g.name, u.login FROM users u JOIN books b JOIN genres g on u.id=b.user and b.genre=g.id ORDER BY b.id ASC";
