@@ -16,7 +16,7 @@ if (isset($_SESSION['login'])&&isset($_SESSION['pass'])){
   		while($row = mysqli_fetch_assoc($result)) {
   		$_SESSION["user"]=$row['id'];
   		}
-  	 	header("Location: test.php");
+  	 	header("Location: index.php");
   	 	exit;
  }
  else{
@@ -31,7 +31,6 @@ if(isset($_POST["login"])&&isset($_POST["pass"])){
 		exit;
 }
 ?>
-<a href="index.html">Перейти на главную страницу</a><br><br>
 <form method="post" action="login.php"> 
 		<input type="text" name="login" size="50" maxlength="20" value=""><br>
 		<input type="password" name="pass" size="50" maxlength="20" value=""><br>

@@ -11,7 +11,7 @@ if (!(isset($_SESSION['shelf']))&&!(isset($_SESSION['closet']))){
 }
 ?>
 <a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
-<a href="test.php">Просмотр БД</a><br>
+<a href="index.php">Просмотр БД</a><br>
 <a href="in.php">Добавить книгу</a><br>
 <a href="genres.php">Добавить жанр</a><br>
 <a href="stat.php">Статистика</a><br>
@@ -48,7 +48,7 @@ var n = document.getElementById('n').value;
 var g = document.getElementById('g').value;
 var closet = document.getElementById('closet').value;
 var shelf = document.getElementById('shelf').value;
-window.location="pars.php?a="+a+"&b="+b+"&g="+g+"&n="+n+"&closet="+closet+"&shelf="+shelf;
+window.location="add_b.php?a="+a+"&b="+b+"&g="+g+"&n="+n+"&closet="+closet+"&shelf="+shelf;
 }
 function rec(){
 // Создаем распознаватель

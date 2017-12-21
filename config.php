@@ -3,7 +3,7 @@ session_start();
 $dbhost = "localhost";
 $dbname = "books";
 $dbuser = "root";
-$dbpass = "root";
+$dbpass = "";
 connectToDB(); 
 
 function connectToDB() {

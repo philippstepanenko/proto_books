@@ -7,7 +7,7 @@ if (!(isset($_SESSION['login']))){
 }
 ?>
 <a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
-<a href="test.php">Просмотр БД</a><br>
+<a href="index.php">Просмотр БД</a><br>
 <a href="in.php">Добавить книгу</a><br>
 <a href="genres.php">Добавить жанр</a><br>
 <a href="stat.php">Статистика</a><br>
@@ -34,6 +34,6 @@ $result = mysqli_query($link, $sql);
 <script>
 function go () {
 var g = document.getElementById('g').value;
-window.location="pars2.php?g="+g;
+window.location="add_g.php?g="+g;
 }
 </script>

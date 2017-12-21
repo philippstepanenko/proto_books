@@ -8,7 +8,7 @@ if (!(isset($_SESSION['login']))){
 }
 ?>
 <a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
-<a href="test.php">Просмотр БД</a><br>
+<a href="index.php">Просмотр БД</a><br>
 <a href="in.php">Добавить книгу</a><br>
 <a href="genres.php">Добавить жанр</a><br>
 <a href="stat.php">Статистика</a><br>
@@ -24,7 +24,7 @@ $result = mysqli_query($link, $sql);
       $mas[$i]=$row['id'];
       $i++;
      }
-for($i=0;$i<count($mas)-1;$i++){
+for($i=0;$i<count($mas);$i++){
   $sql = "SELECT u.login, count(b.user) as count FROM users u join books b on u.id=b.user where b.user='".$mas[$i]."'";
   echo $row[$mas[$i]];
   $result = mysqli_query($link, $sql);
@@ -39,7 +39,7 @@ for($i=0;$i<count($mas)-1;$i++){
 echo "<table><tr><td>Имя пользователя</td><td>Количество добавленных книг</td></tr>";
 if((!empty($login))&&(!empty($count))){
   array_multisort($count, SORT_DESC, $login);
-  for($i=0;$i<count($mas)-1;$i++){
+  for($i=0;$i<count($mas);$i++){
     echo "<tr><td>".$login[$i]."</td><td>".$count[$i]."</td></tr>";
   }
 }

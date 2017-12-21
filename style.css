@@ -2,9 +2,14 @@ a{
 font-family : Times New Roman, monospace ! important;
 }
 
+table{
+	  table-layout: fixed; /* Фиксированная ширина ячеек */
+    width: 50%; /* Ширина таблицы */
+}
+
 td{
   /*background-color:#DAE06F;  */
-  background-color:#0000ff;
+  background-color:#7777cc;
   color: white;
   margin: 50px;
   width: 120px;
