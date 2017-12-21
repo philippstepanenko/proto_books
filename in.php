@@ -12,12 +12,6 @@ if (!(isset($_SESSION['shelf']))&&!(isset($_SESSION['closet']))){
 }
 $menu->show();
 ?>
-<a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
-<a href="index.php">Просмотр БД</a><br>
-<a href="in.php">Добавить книгу</a><br>
-<a href="genres.php">Добавить жанр</a><br>
-<a href="stat.php">Статистика</a><br>
-<a href="out.php">Выйти</a><br><br>
 
 <div><a>Input string: </a><input id="a" type="text"><input type="button" onclick="rec()" value="Распознать"></div>
 <div><a>Input substr: </a><input id="b" type="text" value="дальше"></div>

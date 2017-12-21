@@ -8,12 +8,6 @@ if (!(isset($_SESSION['login']))){
 }
 $menu->show();
 ?>
-<a>Пользователь: <?php echo $_SESSION['login']; ?></a><br>
-<a href="index.php">Просмотр БД</a><br>
-<a href="in.php">Добавить книгу</a><br>
-<a href="genres.php">Добавить жанр</a><br>
-<a href="stat.php">Статистика</a><br>
-<a href="out.php">Выйти</a><br><br>
 
 <?php
 mysqli_set_charset($link, "utf8");
